@@ -1352,10 +1352,54 @@ function toggleTheme() {
         </button>
       </div>
     </form>
+
+    <!-- Accumulating list of submissions made FROM THIS browser (cockpit /todoai #269).
+         Stored in localStorage; survives reloads. Lets the user know which #N IDs
+         they sent so they can reference them in chat with Jeremy. -->
+    <div id="thierry-my-submissions" style="margin-top:18px;padding-top:14px;border-top:1px solid rgba(255,255,255,.08);
+         font-size:12px;color:#94a3b8;display:none">
+      <div style="text-transform:uppercase;letter-spacing:.6px;font-weight:600;margin-bottom:6px;font-size:11px">📋 Os teus pedidos enviados</div>
+      <div id="thierry-my-submissions-list" style="line-height:1.7"></div>
+      <div style="margin-top:6px;font-size:11px;color:#64748b">Guardado neste browser. Limpa o histórico do browser para reset.</div>
+    </div>
   </div>
 </section>
 
 <script>
+var THIERRY_SUBMIT_KEY = 'thierry_my_submissions';
+
+function _renderThierrySubmissions() {
+  var box  = document.getElementById('thierry-my-submissions');
+  var list = document.getElementById('thierry-my-submissions-list');
+  if (!box || !list) return;
+  var items = [];
+  try { items = JSON.parse(localStorage.getItem(THIERRY_SUBMIT_KEY) || '[]'); }
+  catch (e) { items = []; }
+  if (!items.length) { box.style.display = 'none'; return; }
+  box.style.display = 'block';
+  // Most-recent first. Render as compact list of #IDs with first 60 chars of text.
+  list.innerHTML = items.slice(0, 30).map(function(s) {
+    var preview = (s.text || '').replace(/^\[public submission for thierry-laptop\]\s*/, '').slice(0, 60);
+    if (preview.length === 60) preview += '…';
+    var when = s.at ? new Date(s.at).toLocaleString('pt-PT') : '';
+    return '<div style="margin:3px 0"><strong style="color:#4f8ef7">#' + s.id + '</strong> · '
+      + preview.replace(/[<>&]/g, function(c){return {'<':'&lt;','>':'&gt;','&':'&amp;'}[c];})
+      + ' <span style="color:#64748b;font-size:10px">' + when + '</span></div>';
+  }).join('');
+}
+
+function _saveThierrySubmission(id, text) {
+  if (!id) return;
+  var items = [];
+  try { items = JSON.parse(localStorage.getItem(THIERRY_SUBMIT_KEY) || '[]'); }
+  catch (e) { items = []; }
+  items.unshift({ id: id, text: text, at: new Date().toISOString() });
+  // Cap at 50 to keep localStorage bounded.
+  if (items.length > 50) items = items.slice(0, 50);
+  try { localStorage.setItem(THIERRY_SUBMIT_KEY, JSON.stringify(items)); } catch (e) { /* quota */ }
+  _renderThierrySubmissions();
+}
+
 async function submitThierryIdea(ev) {
   ev.preventDefault();
   var form  = document.getElementById('thierry-idea-form');
@@ -1371,8 +1415,9 @@ async function submitThierryIdea(ev) {
     var r  = await fetch('/api/thierry-laptop/idea', { method: 'POST', body: fd });
     var d  = await r.json().catch(function(){ return { ok: false, error: 'invalid response' }; });
     if (d && d.ok) {
-      stat.innerHTML = '✓ Sugestão recebida. O Jeremy vai rever em breve.';
+      stat.innerHTML = '✓ Sugestão recebida' + (d.id ? ' (registada como <strong>#' + d.id + '</strong>)' : '') + '. O Jeremy vai rever em breve.';
       stat.style.color = '#22c55e';
+      _saveThierrySubmission(d.id, idea);
       ta.value = '';
     } else {
       stat.textContent = '✗ ' + (d.error || 'Erro a enviar. Tenta de novo daqui a um minuto.');
@@ -1385,6 +1430,9 @@ async function submitThierryIdea(ev) {
   btn.disabled = false; btn.style.opacity = '1';
   return false;
 }
+
+// Render existing submissions from localStorage on page load
+_renderThierrySubmissions();
 </script>
 
 </body>
