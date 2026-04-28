@@ -384,6 +384,7 @@
   <a href="#spss">💻 SPSS & Excel</a>
   <a href="#modelos">🏆 Modelos</a>
   <a href="#precos">💰 Preços</a>
+  <a href="#actual">📍 Comparar com actual</a>
   <a href="#comparacao">📊 Comparação</a>
   <a href="#recomendacao">⭐ Recomendação</a>
   <a href="#glossario">📖 Glossário</a>
@@ -1098,6 +1099,50 @@ function toggleTheme() {
   </section>
 
   <!-- ===================== COMPARAÇÃO ===================== -->
+  <!-- ===================== COMPARAÇÃO COM O ACTUAL (cockpit /todoai #268) ===================== -->
+  <section id="actual">
+    <h2><span class="icon">📍</span> Compara com o teu portátil actual</h2>
+    <p>Para perceberes onde cada recomendação te dá um upgrade real, primeiro o teu portátil de hoje.</p>
+
+    <div class="laptop-card" style="margin-bottom:1.5rem;border-color:rgba(247,193,85,.4);">
+      <div class="laptop-header">
+        <div class="laptop-rank" style="color:var(--yellow);opacity:1">📌</div>
+        <div class="laptop-title">
+          <h3>HP Pavilion Gaming Laptop 16-a0xxx <span style="font-size:.8em;color:var(--muted);font-weight:400">(o teu actual, 2020)</span></h3>
+          <div class="tagline">Gaming laptop de média gama, ainda usável mas com limitações para academic + desenvolvimento</div>
+        </div>
+        <span class="tag tag-yellow">Baseline</span>
+      </div>
+      <div class="laptop-body">
+        <div class="spec-grid">
+          <div class="spec-item"><div class="spec-label">CPU</div><div class="spec-value warn">Intel Core i5-10300H @ 2.50GHz (4C/8T, BGA soldado, 10ª gen)</div></div>
+          <div class="spec-item"><div class="spec-label">RAM</div><div class="spec-value warn">8 GB DDR4 (7.78 GB usável) — actualizável a 32 GB max</div></div>
+          <div class="spec-item"><div class="spec-label">Armazenamento</div><div class="spec-value">1× M.2 NVMe + 1× 2.5" HDD bay</div></div>
+          <div class="spec-item"><div class="spec-label">GPU</div><div class="spec-value">NVIDIA GeForce GTX 1650 Ti / 1660 Ti (varia por config)</div></div>
+          <div class="spec-item"><div class="spec-label">Ecrã</div><div class="spec-value warn">16.1" FHD IPS 144Hz (sem OLED)</div></div>
+          <div class="spec-item"><div class="spec-label">Carregamento</div><div class="spec-value bad">200W barrel adapter (sem USB-C PD)</div></div>
+          <div class="spec-item"><div class="spec-label">Bateria</div><div class="spec-value warn">Substituível mas requer abrir parcialmente</div></div>
+          <div class="spec-item"><div class="spec-label">WiFi</div><div class="spec-value warn">Realtek/Intel M.2 (substituível)</div></div>
+          <div class="spec-item"><div class="spec-label">iFixit Score</div><div class="spec-value warn">~6/10 (Pavilion Gaming line)</div></div>
+          <div class="spec-item"><div class="spec-label">SO</div><div class="spec-value">Windows 11 Pro 64-bit</div></div>
+          <div class="spec-item"><div class="spec-label">Toque</div><div class="spec-value">Não suportado (sem touch)</div></div>
+          <div class="spec-item"><div class="spec-label">Idade</div><div class="spec-value warn">2020 — entrou no 6º ano de vida</div></div>
+        </div>
+
+        <div class="info-box" style="margin-top:1rem;">
+          <p>📊 <strong>O que cada recomendação te dá vs o que tens hoje:</strong></p>
+          <ul style="margin-top:0.5rem;">
+            <li><strong>ThinkPad T16 Gen 5</strong>: ecrã OLED 2.8K (vs FHD), USB-C PD 100W (vs barrel only), 16-128GB RAM upgradeable (vs 8GB / 32GB cap), iFixit 10/10 (vs ~6/10), bateria mais facilmente substituível, mais leve.</li>
+            <li><strong>Framework 16</strong>: tudo do ThinkPad mais GPU dedicada substituível, USB-C PD 240W (charging extremamente rápido), mainboard upgradeable. Sem OLED.</li>
+            <li><strong>HP EliteBook 860 G11</strong>: similar ao ThinkPad em qualidade construção, OLED opcional, mais business-focus (TPM, segurança).</li>
+            <li><strong>Dell XPS 15</strong>: melhor ecrã (3.5K OLED), build premium. WiFi soldado é regressão face ao Pavilion (que tens M.2).</li>
+          </ul>
+          <p style="margin-top:0.5rem;font-size:0.88rem;color:var(--muted);"><strong>Nota:</strong> O Pavilion Gaming foi optimizado para FPS, não para portabilidade ou eficiência energética. As 4 recomendações são todas significativamente mais portáteis (1.4-2.4 kg vs ~2.4-2.5 kg) e com bateria muito superior em uso normal (não-gaming).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="comparacao">
     <h2><span class="icon">📊</span> Tabela Comparativa</h2>
     <p>Visão rápida dos critérios do Thierry para cada modelo.</p>
@@ -1149,11 +1194,11 @@ function toggleTheme() {
             <td class="cross">✗ Soldado</td>
           </tr>
           <tr>
-            <td><strong>Carregamento USB-C</strong></td>
-            <td class="check">✓ 65–100W PD</td>
-            <td class="check">✓ 240W PD 3.1</td>
-            <td class="check">✓ TB4 USB-C PD</td>
-            <td class="check">✓ TB4 USB-C PD</td>
+            <td><strong>Carregamento USB-C (W max PD)</strong></td>
+            <td class="check">✓ 65W (T14) / 100W (T16) PD</td>
+            <td class="check">✓ 240W PD 3.1 (recorde)</td>
+            <td class="check">✓ 100W via TB4 USB-C PD</td>
+            <td class="check">✓ 130W barrel + 100W TB4 PD</td>
           </tr>
           <tr>
             <td><strong>Fast Charging</strong></td>
