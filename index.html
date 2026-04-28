@@ -19,7 +19,42 @@
       --text: #e2e8f0;
       --muted: #94a3b8;
       --card-radius: 14px;
+      --header-grad: linear-gradient(135deg, #1a2040 0%, #0f1117 60%, #1a1030 100%);
+      --nav-bg: rgba(15,17,23,0.9);
     }
+    /* Light theme (cockpit /todoai #265) — outdoor / bright sun readability. */
+    [data-theme="light"] {
+      --bg: #f6f7fb;
+      --surface: #ffffff;
+      --surface2: #f1f3f9;
+      --border: #d8dde6;
+      --accent: #2563eb;
+      --accent2: #7c3aed;
+      --green: #15824f;
+      --yellow: #b78103;
+      --red: #b3261e;
+      --orange: #c25d18;
+      --text: #1a1d2e;
+      --muted: #4a5468;
+      --header-grad: linear-gradient(135deg, #e0e7ff 0%, #f6f7fb 60%, #ede9fe 100%);
+      --nav-bg: rgba(246,247,251,0.9);
+    }
+    [data-theme="light"] header h1 {
+      background: linear-gradient(90deg, #2563eb, #7c3aed);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    [data-theme="light"] .alert-warn { color: #92400e; background: rgba(183,129,3,.08); border-color: rgba(183,129,3,.30); }
+    [data-theme="light"] .alert-warn p { color: #92400e; }
+    [data-theme="light"] .alert-success { color: #15824f; background: rgba(21,130,79,.08); border-color: rgba(21,130,79,.30); }
+    [data-theme="light"] .alert-success p { color: #15824f; }
+    .theme-toggle {
+      background: transparent; border: 1px solid var(--border); color: var(--text);
+      padding: 0.4rem 0.8rem; border-radius: 6px; cursor: pointer;
+      font-size: 0.95rem; line-height: 1; margin-left: auto;
+    }
+    .theme-toggle:hover { background: var(--surface2); }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Segoe UI', system-ui, sans-serif;
@@ -30,7 +65,7 @@
 
     /* ---- HEADER ---- */
     header {
-      background: linear-gradient(135deg, #1a2040 0%, #0f1117 60%, #1a1030 100%);
+      background: var(--header-grad);
       border-bottom: 1px solid var(--border);
       padding: 3rem 2rem 2.5rem;
       text-align: center;
@@ -74,10 +109,11 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(15,17,23,0.9);
+      background: var(--nav-bg);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
       display: flex;
+      align-items: center;
       gap: 0.2rem;
       padding: 0.5rem 1.5rem;
       overflow-x: auto;
@@ -317,6 +353,22 @@
   </style>
 </head>
 <body>
+<!-- FOUC prevention (cockpit /todoai #265). Apply persisted theme before
+     content paints. Same `cockpit_theme` key as the rest of cockpit so
+     the choice carries across the cockpit / login / landing / thierry-laptop. -->
+<script>
+(function() {
+  try {
+    var saved = localStorage.getItem('cockpit_theme');
+    if (!saved) {
+      saved = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    }
+    if (saved === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  } catch (e) { /* ignore */ }
+})();
+</script>
 
 <header>
   <div class="badge">Projeto Thierry Laptop · 2025 / 2026</div>
@@ -335,7 +387,32 @@
   <a href="#comparacao">📊 Comparação</a>
   <a href="#recomendacao">⭐ Recomendação</a>
   <a href="#glossario">📖 Glossário</a>
+  <button id="theme-toggle" type="button" class="theme-toggle" onclick="toggleTheme()" title="Switch between dark and light theme — useful outdoors in bright sun">
+    <span id="theme-icon">🌙</span>
+  </button>
 </nav>
+
+<script>
+function toggleTheme() {
+  var isLight = document.documentElement.getAttribute('data-theme') === 'light';
+  var icon = document.getElementById('theme-icon');
+  if (isLight) {
+    document.documentElement.removeAttribute('data-theme');
+    try { localStorage.setItem('cockpit_theme', 'dark'); } catch (e) {}
+    if (icon) icon.textContent = '🌙';
+  } else {
+    document.documentElement.setAttribute('data-theme', 'light');
+    try { localStorage.setItem('cockpit_theme', 'light'); } catch (e) {}
+    if (icon) icon.textContent = '☀️';
+  }
+}
+(function() {
+  var icon = document.getElementById('theme-icon');
+  if (icon && document.documentElement.getAttribute('data-theme') === 'light') {
+    icon.textContent = '☀️';
+  }
+})();
+</script>
 
 <main>
 
