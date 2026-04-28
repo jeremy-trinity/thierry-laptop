@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projeto Thierry Laptop — Guia de Compra 2025/2026</title>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --surface: #181c27;
+      --surface2: #1e2335;
+      --border: #2a3050;
+      --accent: #4f8ef7;
+      --accent2: #7c3aed;
+      --green: #22c55e;
+      --yellow: #eab308;
+      --red: #ef4444;
+      --orange: #f97316;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --card-radius: 14px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    /* ---- HEADER ---- */
+    header {
+      background: linear-gradient(135deg, #1a2040 0%, #0f1117 60%, #1a1030 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 3rem 2rem 2.5rem;
+      text-align: center;
+    }
+    header .badge {
+      display: inline-block;
+      background: rgba(79,142,247,0.15);
+      border: 1px solid rgba(79,142,247,0.35);
+      color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.9rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+    header h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      background: linear-gradient(90deg, #4f8ef7, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.6rem;
+    }
+    header p.subtitle {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    header .meta {
+      margin-top: 1.2rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    /* ---- NAV ---- */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(15,17,23,0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 0.2rem;
+      padding: 0.5rem 1.5rem;
+      overflow-x: auto;
+    }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 0.4rem 0.9rem;
+      border-radius: 6px;
+      white-space: nowrap;
+      transition: background 0.15s, color 0.15s;
+    }
+    nav a:hover { background: var(--surface2); color: var(--text); }
+
+    /* ---- MAIN ---- */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 5rem;
+    }
+
+    /* ---- SECTION ---- */
+    section { margin-bottom: 4rem; }
+    section h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--text);
+      padding-bottom: 0.7rem;
+      border-bottom: 2px solid var(--border);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    section h2 .icon { font-size: 1.3rem; }
+    section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin: 1.4rem 0 0.6rem;
+    }
+    p { color: var(--muted); margin-bottom: 0.8rem; }
+    strong { color: var(--text); }
+
+    /* ---- ALERT BOXES ---- */
+    .alert {
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      margin-bottom: 1.2rem;
+      font-size: 0.92rem;
+      display: flex;
+      gap: 0.7rem;
+      align-items: flex-start;
+    }
+    .alert-info { background: rgba(79,142,247,0.1); border: 1px solid rgba(79,142,247,0.3); }
+    .alert-warn { background: rgba(234,179,8,0.1); border: 1px solid rgba(234,179,8,0.3); color: #fcd34d; }
+    .alert-warn p { color: #fcd34d; }
+    .alert-success { background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.3); color: #4ade80; }
+    .alert-success p { color: #4ade80; }
+    .alert-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+
+    /* ---- CRITERIA GRID ---- */
+    .criteria-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem;
+      margin-top: 1.2rem;
+    }
+    .criteria-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--card-radius);
+      padding: 1.1rem 1.2rem;
+      display: flex;
+      gap: 0.8rem;
+      align-items: flex-start;
+    }
+    .criteria-card .icon { font-size: 1.5rem; flex-shrink: 0; }
+    .criteria-card h4 { font-size: 0.92rem; font-weight: 700; color: var(--text); margin-bottom: 0.2rem; }
+    .criteria-card p { font-size: 0.82rem; margin: 0; }
+
+    /* ---- LAPTOP CARDS ---- */
+    .laptop-list { display: flex; flex-direction: column; gap: 1.5rem; }
+    .laptop-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--card-radius);
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .laptop-card:hover { border-color: var(--accent); }
+    .laptop-card.top-pick { border-color: rgba(79,142,247,0.5); }
+
+    .laptop-header {
+      padding: 1.2rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .laptop-rank {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--accent);
+      width: 2.5rem;
+      flex-shrink: 0;
+      text-align: center;
+      opacity: 0.5;
+    }
+    .laptop-rank.rank-1 { opacity: 1; }
+    .laptop-title { flex: 1; }
+    .laptop-title h3 { font-size: 1.15rem; color: var(--text); margin: 0; }
+    .laptop-title .tagline { font-size: 0.82rem; color: var(--muted); }
+    .tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      text-transform: uppercase;
+    }
+    .tag-blue { background: rgba(79,142,247,0.15); color: #60a5fa; border: 1px solid rgba(79,142,247,0.3); }
+    .tag-purple { background: rgba(124,58,237,0.15); color: #a78bfa; border: 1px solid rgba(124,58,237,0.3); }
+    .tag-green { background: rgba(34,197,94,0.15); color: #4ade80; border: 1px solid rgba(34,197,94,0.3); }
+    .tag-yellow { background: rgba(234,179,8,0.15); color: #fbbf24; border: 1px solid rgba(234,179,8,0.3); }
+    .tag-red { background: rgba(239,68,68,0.15); color: #f87171; border: 1px solid rgba(239,68,68,0.3); }
+    .tag-orange { background: rgba(249,115,22,0.15); color: #fb923c; border: 1px solid rgba(249,115,22,0.3); }
+
+    .laptop-body { padding: 1.2rem 1.5rem; }
+    .spec-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 0.7rem;
+      margin-bottom: 1.2rem;
+    }
+    .spec-item {
+      background: var(--surface2);
+      border-radius: 8px;
+      padding: 0.65rem 0.9rem;
+    }
+    .spec-item .spec-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); margin-bottom: 0.25rem; }
+    .spec-item .spec-value { font-size: 0.9rem; font-weight: 600; color: var(--text); }
+    .spec-item .spec-value.good { color: var(--green); }
+    .spec-item .spec-value.warn { color: var(--yellow); }
+    .spec-item .spec-value.bad { color: var(--red); }
+
+    .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; }
+    @media (max-width: 500px) { .pros-cons { grid-template-columns: 1fr; } }
+    .pros, .cons {
+      background: var(--surface2);
+      border-radius: 10px;
+      padding: 0.9rem 1rem;
+    }
+    .pros h5 { color: var(--green); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.6rem; }
+    .cons h5 { color: var(--red); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.6rem; }
+    .pros ul, .cons ul { list-style: none; padding: 0; }
+    .pros ul li, .cons ul li { font-size: 0.86rem; color: var(--muted); padding: 0.22rem 0; display: flex; gap: 0.5rem; }
+    .pros ul li::before { content: "✓"; color: var(--green); font-weight: 700; flex-shrink: 0; }
+    .cons ul li::before { content: "✗"; color: var(--red); font-weight: 700; flex-shrink: 0; }
+
+    /* ---- COMPARISON TABLE ---- */
+    .table-wrap { overflow-x: auto; margin-top: 1rem; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+    th {
+      background: var(--surface2);
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 2px solid var(--border);
+      white-space: nowrap;
+    }
+    td {
+      padding: 0.7rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--muted);
+      vertical-align: middle;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: rgba(255,255,255,0.02); }
+    .check { color: var(--green); font-weight: 700; }
+    .cross { color: var(--red); font-weight: 700; }
+    .partial { color: var(--yellow); font-weight: 700; }
+    td strong { color: var(--text); }
+
+    /* ---- SPECS REQUIRED ---- */
+    .req-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--card-radius);
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .req-card h4 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.6rem; }
+
+    /* ---- INFO BOX ---- */
+    .info-box {
+      background: var(--surface);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 10px 10px 0;
+      padding: 1rem 1.2rem;
+      margin: 1.2rem 0;
+    }
+    .info-box p { margin: 0; font-size: 0.9rem; }
+
+    /* ---- FOOTER ---- */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    /* ---- SCORE BAR ---- */
+    .score-wrap { display: flex; align-items: center; gap: 0.7rem; margin: 0.4rem 0; }
+    .score-label { font-size: 0.8rem; color: var(--muted); width: 160px; flex-shrink: 0; }
+    .score-bar-bg { flex: 1; height: 8px; background: var(--surface2); border-radius: 999px; overflow: hidden; }
+    .score-bar { height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--accent), #a78bfa); }
+    .score-num { font-size: 0.8rem; font-weight: 700; color: var(--text); width: 30px; text-align: right; flex-shrink: 0; }
+
+    @media (max-width: 640px) {
+      .spec-grid { grid-template-columns: 1fr 1fr; }
+      nav a { padding: 0.4rem 0.6rem; font-size: 0.78rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="badge">Projeto Thierry Laptop · 2025 / 2026</div>
+  <h1>Guia Completo de Compra de Portátil</h1>
+  <p class="subtitle">Análise de portáteis eficientes, duráveis, reparáveis e com capacidade de upgrade — focado nas necessidades do Thierry.</p>
+  <div class="meta">Atualizado: Abril 2026 &nbsp;·&nbsp; Preparado por Jeremy Trindade</div>
+</header>
+
+<nav>
+  <a href="#criterios">📋 Critérios</a>
+  <a href="#cpu-soldado">🔩 CPU Soldada?</a>
+  <a href="#wifi-nota">📶 WiFi 5GHz</a>
+  <a href="#spss">💻 SPSS & Excel</a>
+  <a href="#modelos">🏆 Modelos</a>
+  <a href="#comparacao">📊 Comparação</a>
+  <a href="#recomendacao">⭐ Recomendação</a>
+  <a href="#glossario">📖 Glossário</a>
+</nav>
+
+<main>
+
+  <!-- ===================== CRITÉRIOS ===================== -->
+  <section id="criterios">
+    <h2><span class="icon">📋</span> Os Teus Critérios de Compra</h2>
+    <p>Antes de analisar os modelos, aqui estão todos os requisitos identificados — usados para filtrar e classificar cada portátil.</p>
+    <div class="criteria-grid">
+      <div class="criteria-card">
+        <span class="icon">🔩</span>
+        <div>
+          <h4>CPU não soldada</h4>
+          <p>Processador com socket físico, substituível/actualizável sem mudar a motherboard.</p>
+        </div>
+      </div>
+      <div class="criteria-card">
+        <span class="icon">🔋</span>
+        <div>
+          <h4>Bateria substituível</h4>
+          <p>Bateria acessível ao utilizador sem destruir o chassis — sem cola industrial.</p>
+        </div>
+      </div>
+      <div class="criteria-card">
+        <span class="icon">🧩</span>
+        <div>
+          <h4>RAM não soldada (2 slots)</h4>
+          <p>Dois slots SO-DIMM para upgrade e dual-channel de memória.</p>
+        </div>
+      </div>
+      <div class="criteria-card">
+        <span class="icon">💾</span>
+        <div>
+          <h4>2 slots de armazenamento</h4>
+          <p>Dois slots M.2 NVMe para expandir ou substituir o SSD.</p>
+        </div>
+      </div>
+      <div class="criteria-card">
+        <span class="icon">📶</span>
+        <div>
+          <h4>WiFi substituível/upgradeable</h4>
+          <p>Placa WiFi M.2 não soldada — possibilidade de mudar para WiFi 6/6E/7 ou adicionar 5 GHz.</p>
+        </div>
+      </div>
+      <div class="criteria-card">
+        <span class="icon">⚡</span>
+        <div>
+          <h4>Carregamento USB-C</h4>
+          <p>Pelo menos uma porta USB-C com Power Delivery para carregar o portátil — não limitado ao carregador oficial.</p>
+        </div>
+      </div>
+      <div class="criteria-card">
+        <span class="icon">🚀</span>
+        <div>
+          <h4>Fast Charging</h4>
+          <p>Suporte a carregamento rápido (≥65W via USB-C PD).</p>
+        </div>
+      </div>
+      <div class="criteria-card">
+        <span class="icon">🖥️</span>
+        <div>
+          <h4>Ecrã de qualidade (OLED)</h4>
+          <p>Preferencialmente painel OLED com cores vívidas, contraste infinito e baixa emissão de luz de fundo.</p>
+        </div>
+      </div>
+      <div class="criteria-card">
+        <span class="icon">📊</span>
+        <div>
+          <h4>IBM SPSS + Excel</h4>
+          <p>Hardware suficiente para correr software estatístico profissional e folhas de cálculo complexas.</p>
+        </div>
+      </div>
+      <div class="criteria-card">
+        <span class="icon">🛠️</span>
+        <div>
+          <h4>Máxima reparabilidade</h4>
+          <p>Menos peças soldadas possível — parafusos standard, peças disponíveis, boa pontuação iFixit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CPU SOLDADA ===================== -->
+  <section id="cpu-soldado">
+    <h2><span class="icon">🔩</span> A Verdade sobre CPUs Soldadas em Portáteis</h2>
+
+    <div class="alert alert-warn">
+      <span class="alert-icon">⚠️</span>
+      <div>
+        <p><strong>Realidade atual (2025/2026):</strong> Praticamente todos os portáteis modernos têm o processador soldado diretamente na motherboard usando tecnologia BGA (Ball Grid Array). Não existe a opção de remover e substituir o CPU como num PC desktop.</p>
+      </div>
+    </div>
+
+    <p>Nos anos 90 e 2000, alguns portáteis usavam sockets físicos (como Socket 478 ou Socket P) que permitiam substituir o CPU. Hoje essa prática foi completamente abandonada pela indústria a favor do BGA, que permite processadores mais finos, mais eficientes e com melhor dissipação térmica.</p>
+
+    <h3>Então, existem exceções?</h3>
+    <p>Sim — mas com ressalvas importantes:</p>
+
+    <div class="req-card">
+      <h4>🏭 Eurocom (Canadá) — Portáteis com CPU em Socket Desktop</h4>
+      <p>A Eurocom é praticamente a única fabricante a oferecer portáteis com CPUs de desktop em socket físico (ex: LGA 1700). Modelos como o <strong>Sky Z7 R2</strong> e o <strong>Raptor X16</strong> usam processadores Intel i9 de desktop num chassis de portátil.</p>
+      <div class="spec-grid" style="margin-top:0.8rem;">
+        <div class="spec-item"><div class="spec-label">Preço base</div><div class="spec-value warn">$3,000–$8,000+</div></div>
+        <div class="spec-item"><div class="spec-label">Peso</div><div class="spec-value warn">3–5 kg</div></div>
+        <div class="spec-item"><div class="spec-label">CPU Socket</div><div class="spec-value good">LGA Desktop</div></div>
+        <div class="spec-item"><div class="spec-label">Adequado para uso diário</div><div class="spec-value warn">Limitado</div></div>
+      </div>
+      <p style="margin-top:0.8rem; font-size:0.85rem;"><strong>Conclusão:</strong> Tecnicamente resolve o critério da CPU não-soldada, mas a um custo muito elevado, com muito peso e dimensões não práticas para transporte. Para uso académico/profissional normal, não é a escolha mais sensata.</p>
+    </div>
+
+    <div class="req-card">
+      <h4>🔄 Framework — A Abordagem Inteligente à Modularidade</h4>
+      <p>O Framework não tem o CPU num socket substituível individualmente — mas resolve o problema de forma diferente: <strong>toda a mainboard é modular e substituível</strong> como uma peça de €200-400. Quando sai uma nova geração de processadores, compras a nova mainboard e transplanta-a para o mesmo chassis. O resultado prático é semelhante a ter um CPU substituível, mas com uma abordagem mais moderna.</p>
+    </div>
+
+    <div class="info-box">
+      <p>💡 <strong>Recomendação:</strong> Para o orçamento e uso do Thierry, a abordagem Framework (mainboard modular) ou ThinkPad/EliteBook com componentes não-soldados (RAM, SSD, bateria, WiFi) é a opção mais realista e custo-eficaz. A CPU verdadeiramente em socket está restrita a portáteis de uso industrial/profissional extremamente caros.</p>
+    </div>
+  </section>
+
+  <!-- ===================== WIFI NOTA ===================== -->
+  <section id="wifi-nota">
+    <h2><span class="icon">📶</span> WiFi e a Diferença entre 2.4 GHz e 5 GHz</h2>
+
+    <div class="alert alert-info">
+      <span class="alert-icon">ℹ️</span>
+      <div>
+        <p><strong>Nota importante:</strong> "5G" que mencionas é diferente de "5G" de telemóvel. No contexto de WiFi, referimo-nos às bandas de frequência <strong>2.4 GHz</strong> e <strong>5 GHz</strong> — ambas disponíveis em routers WiFi domésticos modernos.</p>
+      </div>
+    </div>
+
+    <h3>O que significa cada banda?</h3>
+    <p><strong>2.4 GHz:</strong> Maior alcance, atravessa paredes melhor, mas mais lento e com mais interferências (outros dispositivos usam a mesma banda).</p>
+    <p><strong>5 GHz:</strong> Mais rápido, menos interferência, mas menor alcance. Ideal quando estás perto do router.</p>
+
+    <h3>Quando faz sentido substituir a placa WiFi?</h3>
+    <p>Se o portátil tiver uma placa WiFi antiga que só suporte 2.4 GHz (ex: WiFi 4 / 802.11n antigo), podes substituir por uma placa moderna que suporte ambas as bandas. Exemplo:</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Padrão WiFi</th>
+            <th>Nome Técnico</th>
+            <th>2.4 GHz</th>
+            <th>5 GHz</th>
+            <th>6 GHz</th>
+            <th>Velocidade Máx.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>WiFi 4</strong></td><td>802.11n</td><td class="check">✓</td><td class="partial">Parcial</td><td class="cross">✗</td><td>300 Mbps</td></tr>
+          <tr><td><strong>WiFi 5</strong></td><td>802.11ac</td><td class="check">✓</td><td class="check">✓</td><td class="cross">✗</td><td>3.5 Gbps</td></tr>
+          <tr><td><strong>WiFi 6</strong></td><td>802.11ax</td><td class="check">✓</td><td class="check">✓</td><td class="cross">✗</td><td>9.6 Gbps</td></tr>
+          <tr><td><strong>WiFi 6E</strong></td><td>802.11ax (ext.)</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td><td>9.6 Gbps</td></tr>
+          <tr><td><strong>WiFi 7</strong></td><td>802.11be</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td><td>46 Gbps</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="alert alert-success" style="margin-top:1rem;">
+      <span class="alert-icon">✅</span>
+      <div>
+        <p><strong>Boa notícia:</strong> Todos os portáteis modernos recomendados neste guia já incluem WiFi 6 ou superior, suportando ambas as bandas 2.4 GHz e 5 GHz de origem. A possibilidade de substituir a placa WiFi é um bónus para futuros upgrades (ex: para WiFi 7).</p>
+      </div>
+    </div>
+
+    <h3>Como se substitui a placa WiFi?</h3>
+    <p>A maioria das placas WiFi em portáteis usa o conector <strong>M.2 2230</strong> (formato pequeno, 22×30mm). Se o portátil tiver a placa WiFi acessível (não soldada), basta abrir o fundo, retirar a placa antiga, inserir a nova e reconectar as antenas. O processo demora cerca de 15 minutos.</p>
+  </section>
+
+  <!-- ===================== SPSS ===================== -->
+  <section id="spss">
+    <h2><span class="icon">💻</span> Requisitos para IBM SPSS e Excel</h2>
+    <p>Para determinar o hardware mínimo necessário, analisámos os requisitos oficiais do IBM SPSS Statistics e do Microsoft Excel.</p>
+
+    <div class="spec-grid">
+      <div class="req-card">
+        <h4>📊 IBM SPSS Statistics</h4>
+        <div class="score-wrap"><span class="score-label">RAM mínima</span><div class="score-bar-bg"><div class="score-bar" style="width:20%"></div></div><span class="score-num">4 GB</span></div>
+        <div class="score-wrap"><span class="score-label">RAM recomendada</span><div class="score-bar-bg"><div class="score-bar" style="width:40%"></div></div><span class="score-num">8 GB</span></div>
+        <div class="score-wrap"><span class="score-label">CPU</span><div class="score-bar-bg"><div class="score-bar" style="width:30%"></div></div><span class="score-num">2 GHz+</span></div>
+        <div class="score-wrap"><span class="score-label">Armazenamento</span><div class="score-bar-bg"><div class="score-bar" style="width:10%"></div></div><span class="score-num">2 GB</span></div>
+        <p style="margin-top:0.7rem; font-size:0.83rem;">Requer Windows 10/11 64-bit. Para datasets grandes recomenda-se 16 GB+ RAM.</p>
+      </div>
+      <div class="req-card">
+        <h4>📝 Microsoft Excel</h4>
+        <div class="score-wrap"><span class="score-label">RAM mínima</span><div class="score-bar-bg"><div class="score-bar" style="width:20%"></div></div><span class="score-num">4 GB</span></div>
+        <div class="score-wrap"><span class="score-label">RAM recomendada</span><div class="score-bar-bg"><div class="score-bar" style="width:30%"></div></div><span class="score-num">8 GB</span></div>
+        <div class="score-wrap"><span class="score-label">Armazenamento</span><div class="score-bar-bg"><div class="score-bar" style="width:10%"></div></div><span class="score-num">4 GB</span></div>
+        <p style="margin-top:0.7rem; font-size:0.83rem;">Parte do Microsoft 365. Corre bem em qualquer CPU moderno.</p>
+      </div>
+    </div>
+
+    <div class="alert alert-success">
+      <span class="alert-icon">✅</span>
+      <div>
+        <p><strong>Conclusão:</strong> Qualquer portátil moderno com 8 GB de RAM e um processador Intel Core i5 / AMD Ryzen 5 ou superior corre SPSS e Excel sem problemas. Com 16 GB de RAM terás uma experiência muito confortável mesmo com datasets grandes. Todos os modelos recomendados neste guia cumprem folgadamente este requisito.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== MODELOS ===================== -->
+  <section id="modelos">
+    <h2><span class="icon">🏆</span> Modelos Recomendados — Análise Detalhada</h2>
+    <p>Selecionámos os portáteis que melhor combinam os critérios do Thierry. Ordenados por adequação geral ao perfil de uso.</p>
+
+    <div class="laptop-list">
+
+      <!-- ===== 1. ThinkPad T14/T16 Gen 5 ===== -->
+      <div class="laptop-card top-pick">
+        <div class="laptop-header">
+          <div class="laptop-rank rank-1">#1</div>
+          <div class="laptop-title">
+            <h3>Lenovo ThinkPad T14 Gen 5 / T16 Gen 5</h3>
+            <div class="tagline">Melhor equilíbrio entre reparabilidade, OLED, USB-C e preço — iFixit 10/10</div>
+          </div>
+          <span class="tag tag-blue">⭐ Top Pick</span>
+          <span class="tag tag-green">iFixit 10/10</span>
+          <span class="tag tag-purple">OLED</span>
+        </div>
+        <div class="laptop-body">
+          <div class="spec-grid">
+            <div class="spec-item">
+              <div class="spec-label">CPU</div>
+              <div class="spec-value warn">Intel Core Ultra 100/200 (soldado)</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">RAM</div>
+              <div class="spec-value good">2× SO-DIMM DDR5 — até 64 GB (T14) / 128 GB (T16)</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Armazenamento</div>
+              <div class="spec-value good">1–2× M.2 NVMe (T16 tem 2 slots)</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Bateria</div>
+              <div class="spec-value good">Substituível pelo utilizador</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">WiFi</div>
+              <div class="spec-value warn">WiFi 6E (verificar se é M.2 ou soldado por modelo)</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Carregamento USB-C</div>
+              <div class="spec-value good">Sim — 65 W (T14) / 100 W (T16) USB-C PD</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Ecrã OLED</div>
+              <div class="spec-value good">Opção 2.8K OLED 120Hz, HDR, Dolby Vision</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">iFixit Score</div>
+              <div class="spec-value good">10 / 10 (nova geração T-series)</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Preço aproximado</div>
+              <div class="spec-value">€900 – €1,800</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Peso</div>
+              <div class="spec-value">1.4 kg (T14) / 1.9 kg (T16)</div>
+            </div>
+          </div>
+
+          <div class="pros-cons">
+            <div class="pros">
+              <h5>✓ Pontos Positivos</h5>
+              <ul>
+                <li>iFixit 10/10 — máxima pontuação de reparabilidade</li>
+                <li>RAM em 2 slots SO-DIMM, totalmente actualizável</li>
+                <li>Bateria acessível e substituível</li>
+                <li>Ecrã OLED 2.8K opcional — imagem excelente</li>
+                <li>Carregamento USB-C até 100W (T16)</li>
+                <li>Marca com longa tradição de suporte e peças disponíveis</li>
+                <li>Keyboards excelentes (referência do mercado)</li>
+                <li>T16 tem 2 slots M.2 para armazenamento</li>
+              </ul>
+            </div>
+            <div class="cons">
+              <h5>✗ Pontos Negativos</h5>
+              <ul>
+                <li>CPU soldado (BGA) — sem upgrade de processador</li>
+                <li>WiFi pode estar soldado em algumas variantes — verificar PSREF antes de comprar</li>
+                <li>T14 só tem 1 slot M.2 em algumas configurações</li>
+                <li>Sem GPU dedicada nos modelos base</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="info-box" style="margin-top:1rem;">
+            <p>💡 <strong>Dica:</strong> Ao comprar, escolhe sempre a opção de ecrã <strong>OLED 2.8K</strong> e verifica no documento PSREF oficial do Lenovo se a placa WiFi é <strong>M.2 2230</strong> (substituível) ou soldada. O T16 Gen 5 é preferível ao T14 para quem quer 2 slots de SSD.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== 2. Framework Laptop 16 ===== -->
+      <div class="laptop-card">
+        <div class="laptop-header">
+          <div class="laptop-rank">#2</div>
+          <div class="laptop-title">
+            <h3>Framework Laptop 16 (2025)</h3>
+            <div class="tagline">Modularidade máxima — o portátil mais reparável do mercado</div>
+          </div>
+          <span class="tag tag-purple">Mais Reparável</span>
+          <span class="tag tag-green">iFixit 10/10</span>
+          <span class="tag tag-orange">Sem OLED</span>
+        </div>
+        <div class="laptop-body">
+          <div class="spec-grid">
+            <div class="spec-item">
+              <div class="spec-label">CPU</div>
+              <div class="spec-value warn">AMD Ryzen AI 300 (Zen 5) — soldado, mas mainboard substituível</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">RAM</div>
+              <div class="spec-value good">2× SO-DIMM DDR5 — até 64 GB</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Armazenamento</div>
+              <div class="spec-value good">2× M.2 2280 NVMe slots</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Bateria</div>
+              <div class="spec-value good">Substituível — Framework vende peças</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">WiFi</div>
+              <div class="spec-value good">Placa M.2 WiFi 6E substituível</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Carregamento USB-C</div>
+              <div class="spec-value good">240 W USB-C PD 3.1 (primeiro do mundo!)</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Ecrã OLED</div>
+              <div class="spec-value bad">Não disponível — LCD 2560×1600</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">iFixit Score</div>
+              <div class="spec-value good">10 / 10</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Preço aproximado</div>
+              <div class="spec-value">€1,100 – €1,800</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Peso</div>
+              <div class="spec-value">2.1 kg</div>
+            </div>
+          </div>
+
+          <div class="pros-cons">
+            <div class="pros">
+              <h5>✓ Pontos Positivos</h5>
+              <ul>
+                <li>Portátil mais modular do mundo — tudo é substituível</li>
+                <li>Mainboard actualizável (novo CPU = nova mainboard)</li>
+                <li>240W via USB-C PD 3.1 — carregamento ultra rápido</li>
+                <li>6 expansion card slots personalizáveis (USB-C, USB-A, HDMI, etc.)</li>
+                <li>WiFi M.2 substituível facilmente</li>
+                <li>2 slots M.2 NVMe</li>
+                <li>GPU modular opcionalmente (RTX 5070)</li>
+                <li>Peças disponíveis diretamente da Framework</li>
+              </ul>
+            </div>
+            <div class="cons">
+              <h5>✗ Pontos Negativos</h5>
+              <ul>
+                <li>Sem opção de ecrã OLED (grande desvantagem para este critério)</li>
+                <li>Autonomia de bateria inferior a ThinkPad</li>
+                <li>Mais pesado que a média</li>
+                <li>Menos reconhecido em Portugal — suporte local limitado</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== 3. HP EliteBook 860 G11 ===== -->
+      <div class="laptop-card">
+        <div class="laptop-header">
+          <div class="laptop-rank">#3</div>
+          <div class="laptop-title">
+            <h3>HP EliteBook 860 G11 (16")</h3>
+            <div class="tagline">Profissional premium com OLED, WiFi M.2 e bateria substituível</div>
+          </div>
+          <span class="tag tag-blue">Profissional</span>
+          <span class="tag tag-purple">OLED</span>
+          <span class="tag tag-green">WiFi M.2</span>
+        </div>
+        <div class="laptop-body">
+          <div class="spec-grid">
+            <div class="spec-item">
+              <div class="spec-label">CPU</div>
+              <div class="spec-value warn">Intel Core Ultra 5/7 (soldado)</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">RAM</div>
+              <div class="spec-value good">2× SO-DIMM DDR5 — até 64 GB</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Armazenamento</div>
+              <div class="spec-value good">M.2 NVMe (verificar nº de slots)</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Bateria</div>
+              <div class="spec-value good">Substituível (76 Whr ou 56 Whr)</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">WiFi</div>
+              <div class="spec-value good">WiFi 6E — placa M.2 removível</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Carregamento USB-C</div>
+              <div class="spec-value good">Thunderbolt 4 com USB-C PD</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Ecrã OLED</div>
+              <div class="spec-value good">Opção 2.8K OLED, 100% DCI-P3</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">iFixit Score</div>
+              <div class="spec-value good">Alto (não publicado recentemente)</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Preço aproximado</div>
+              <div class="spec-value">€1,200 – €2,000</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Peso</div>
+              <div class="spec-value">1.9 kg</div>
+            </div>
+          </div>
+
+          <div class="pros-cons">
+            <div class="pros">
+              <h5>✓ Pontos Positivos</h5>
+              <ul>
+                <li>OLED 2.8K com 100% DCI-P3 — cores excepcionais</li>
+                <li>Placa WiFi M.2 removível e actualizável</li>
+                <li>Bateria substituível</li>
+                <li>2 portas Thunderbolt 4 (USB-C PD)</li>
+                <li>Excelente build quality — chassis em alumínio</li>
+                <li>Boa disponibilidade de peças via HP</li>
+              </ul>
+            </div>
+            <div class="cons">
+              <h5>✗ Pontos Negativos</h5>
+              <ul>
+                <li>CPU soldado</li>
+                <li>Preço elevado nos modelos com OLED</li>
+                <li>Verificar nº de slots M.2 no modelo específico</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== 4. Dell XPS 15 ===== -->
+      <div class="laptop-card">
+        <div class="laptop-header">
+          <div class="laptop-rank">#4</div>
+          <div class="laptop-title">
+            <h3>Dell XPS 15 (9530 / 9540)</h3>
+            <div class="tagline">OLED deslumbrante e 2 slots SSD — mas WiFi soldado é um problema</div>
+          </div>
+          <span class="tag tag-purple">OLED 3.5K</span>
+          <span class="tag tag-red">WiFi Soldado</span>
+        </div>
+        <div class="laptop-body">
+          <div class="spec-grid">
+            <div class="spec-item">
+              <div class="spec-label">CPU</div>
+              <div class="spec-value warn">Intel Core i7/i9 (soldado)</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">RAM</div>
+              <div class="spec-value good">2× SO-DIMM DDR5 — até 64 GB</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Armazenamento</div>
+              <div class="spec-value good">2× M.2 NVMe slots</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Bateria</div>
+              <div class="spec-value good">86 Whr — substituível</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">WiFi</div>
+              <div class="spec-value bad">Killer WiFi — SOLDADO na motherboard</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Carregamento USB-C</div>
+              <div class="spec-value good">Thunderbolt 4 com USB-C PD</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Ecrã OLED</div>
+              <div class="spec-value good">3.5K OLED 60Hz — magnífico</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Preço aproximado</div>
+              <div class="spec-value">€1,400 – €2,500</div>
+            </div>
+          </div>
+
+          <div class="pros-cons">
+            <div class="pros">
+              <h5>✓ Pontos Positivos</h5>
+              <ul>
+                <li>OLED 3.5K — um dos melhores ecrãs do mercado</li>
+                <li>2 slots M.2 NVMe</li>
+                <li>2 slots SO-DIMM DDR5</li>
+                <li>Bateria substituível</li>
+                <li>Design premium e compacto</li>
+              </ul>
+            </div>
+            <div class="cons">
+              <h5>✗ Pontos Negativos</h5>
+              <ul>
+                <li><strong>WiFi soldado — não actualizável</strong></li>
+                <li>CPU soldado</li>
+                <li>Preço elevado</li>
+                <li>Autonomia de bateria limitada com OLED</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="alert alert-warn" style="margin-top:1rem;">
+            <span class="alert-icon">⚠️</span>
+            <div>
+              <p>O Dell XPS 15 tem o WiFi soldado (Killer WiFi integrado na motherboard) — este é um critério excluente dado os requisitos do Thierry de poder substituir e actualizar a placa WiFi.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== 5. Eurocom (referência) ===== -->
+      <div class="laptop-card">
+        <div class="laptop-header">
+          <div class="laptop-rank">#5</div>
+          <div class="laptop-title">
+            <h3>Eurocom Raptor X16 / Sky Z7 R2</h3>
+            <div class="tagline">Única opção com CPU de desktop em socket — mas preço e peso são proibitivos</div>
+          </div>
+          <span class="tag tag-yellow">CPU Socketed</span>
+          <span class="tag tag-red">Caro & Pesado</span>
+        </div>
+        <div class="laptop-body">
+          <div class="spec-grid">
+            <div class="spec-item">
+              <div class="spec-label">CPU</div>
+              <div class="spec-value good">Desktop LGA — substituível!</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">RAM</div>
+              <div class="spec-value good">Múltiplos slots SO-DIMM</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Preço</div>
+              <div class="spec-value bad">€3,000 – €8,000+</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Peso</div>
+              <div class="spec-value bad">3–5 kg</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Ecrã OLED</div>
+              <div class="spec-value warn">Depende do modelo</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Portabilidade</div>
+              <div class="spec-value bad">Muito limitada</div>
+            </div>
+          </div>
+          <p style="font-size:0.88rem; margin-top:0.8rem;">Mencionado apenas como referência — resolve tecnicamente o critério da CPU não-soldada, mas não é adequado para uso académico/diário pelo preço, peso e dimensões.</p>
+        </div>
+      </div>
+
+    </div><!-- /laptop-list -->
+  </section>
+
+  <!-- ===================== COMPARAÇÃO ===================== -->
+  <section id="comparacao">
+    <h2><span class="icon">📊</span> Tabela Comparativa</h2>
+    <p>Visão rápida dos critérios do Thierry para cada modelo.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Critério</th>
+            <th>ThinkPad T14/T16 Gen5</th>
+            <th>Framework 16 (2025)</th>
+            <th>HP EliteBook 860 G11</th>
+            <th>Dell XPS 15</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>CPU não soldado</strong></td>
+            <td class="cross">✗ BGA Soldado</td>
+            <td><span class="partial">⚡ Mainboard modular</span></td>
+            <td class="cross">✗ BGA Soldado</td>
+            <td class="cross">✗ BGA Soldado</td>
+          </tr>
+          <tr>
+            <td><strong>RAM não soldada (2 slots)</strong></td>
+            <td class="check">✓ 2× SO-DIMM</td>
+            <td class="check">✓ 2× SO-DIMM</td>
+            <td class="check">✓ 2× SO-DIMM</td>
+            <td class="check">✓ 2× SO-DIMM</td>
+          </tr>
+          <tr>
+            <td><strong>2 slots M.2 SSD</strong></td>
+            <td><span class="partial">⚡ T16 sim / T14 1 slot</span></td>
+            <td class="check">✓ 2× M.2 2280</td>
+            <td><span class="partial">⚡ Verificar modelo</span></td>
+            <td class="check">✓ 2× M.2</td>
+          </tr>
+          <tr>
+            <td><strong>Bateria substituível</strong></td>
+            <td class="check">✓ Sim</td>
+            <td class="check">✓ Sim</td>
+            <td class="check">✓ Sim</td>
+            <td class="check">✓ 86 Whr</td>
+          </tr>
+          <tr>
+            <td><strong>WiFi substituível (M.2)</strong></td>
+            <td><span class="partial">⚡ Verificar por modelo</span></td>
+            <td class="check">✓ M.2 WiFi 6E</td>
+            <td class="check">✓ M.2 removível</td>
+            <td class="cross">✗ Soldado</td>
+          </tr>
+          <tr>
+            <td><strong>Carregamento USB-C</strong></td>
+            <td class="check">✓ 65–100W PD</td>
+            <td class="check">✓ 240W PD 3.1</td>
+            <td class="check">✓ TB4 USB-C PD</td>
+            <td class="check">✓ TB4 USB-C PD</td>
+          </tr>
+          <tr>
+            <td><strong>Fast Charging</strong></td>
+            <td class="check">✓ Sim</td>
+            <td class="check">✓ Sim (240W!)</td>
+            <td class="check">✓ Sim</td>
+            <td class="check">✓ Sim</td>
+          </tr>
+          <tr>
+            <td><strong>Ecrã OLED</strong></td>
+            <td class="check">✓ 2.8K OLED opção</td>
+            <td class="cross">✗ Não disponível</td>
+            <td class="check">✓ 2.8K OLED opção</td>
+            <td class="check">✓ 3.5K OLED</td>
+          </tr>
+          <tr>
+            <td><strong>SPSS + Excel</strong></td>
+            <td class="check">✓ Folgado</td>
+            <td class="check">✓ Folgado</td>
+            <td class="check">✓ Folgado</td>
+            <td class="check">✓ Folgado</td>
+          </tr>
+          <tr>
+            <td><strong>iFixit / Reparabilidade</strong></td>
+            <td class="check">✓ 10/10</td>
+            <td class="check">✓ 10/10</td>
+            <td class="check">✓ Alta</td>
+            <td><span class="partial">⚡ Média</span></td>
+          </tr>
+          <tr>
+            <td><strong>Preço (aprox.)</strong></td>
+            <td>€900–€1,800</td>
+            <td>€1,100–€1,800</td>
+            <td>€1,200–€2,000</td>
+            <td>€1,400–€2,500</td>
+          </tr>
+          <tr>
+            <td><strong>Disponibilidade PT/EU</strong></td>
+            <td class="check">✓ Fácil</td>
+            <td><span class="partial">⚡ Online (frame.work)</span></td>
+            <td class="check">✓ Fácil</td>
+            <td class="check">✓ Fácil</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.8rem; margin-top:0.8rem; font-style:italic;">Legenda: ✓ Sim &nbsp;·&nbsp; ✗ Não &nbsp;·&nbsp; ⚡ Parcial/Depende</p>
+  </section>
+
+  <!-- ===================== RECOMENDAÇÃO ===================== -->
+  <section id="recomendacao">
+    <h2><span class="icon">⭐</span> Recomendação Final</h2>
+
+    <div class="alert alert-success">
+      <span class="alert-icon">🏆</span>
+      <div>
+        <p><strong>Recomendação principal: Lenovo ThinkPad T16 Gen 5 com ecrã OLED 2.8K</strong><br>
+        Combina iFixit 10/10, RAM dual SO-DIMM, 2 slots M.2, bateria substituível, ecrã OLED e carregamento USB-C até 100W. É o portátil que melhor cumpre a lista de critérios a um preço competitivo para o que oferece.</p>
+      </div>
+    </div>
+
+    <div class="req-card" style="margin-top:1rem;">
+      <h4>🛒 O que verificar ao comprar o ThinkPad T16 Gen 5</h4>
+      <ul style="list-style:none; padding:0;">
+        <li style="padding:0.35rem 0; border-bottom:1px solid var(--border); font-size:0.9rem; display:flex; gap:0.5rem; color:var(--muted);"><span style="color:var(--accent)">1.</span> Escolher o <strong style="color:var(--text)">ecrã OLED 2.8K 120Hz</strong> na configuração</li>
+        <li style="padding:0.35rem 0; border-bottom:1px solid var(--border); font-size:0.9rem; display:flex; gap:0.5rem; color:var(--muted);"><span style="color:var(--accent)">2.</span> Verificar no <a href="https://psref.lenovo.com" style="color:var(--accent)">PSREF Lenovo</a> se o WiFi é M.2 (substituível) ou soldado no modelo específico</li>
+        <li style="padding:0.35rem 0; border-bottom:1px solid var(--border); font-size:0.9rem; display:flex; gap:0.5rem; color:var(--muted);"><span style="color:var(--accent)">3.</span> Confirmar que vem com <strong style="color:var(--text)">2 slots M.2</strong> e 2 slots SO-DIMM</li>
+        <li style="padding:0.35rem 0; border-bottom:1px solid var(--border); font-size:0.9rem; display:flex; gap:0.5rem; color:var(--muted);"><span style="color:var(--accent)">4.</span> Comprar com <strong style="color:var(--text)">16 GB de RAM</strong> mínimo para SPSS confortável</li>
+        <li style="padding:0.35rem 0; font-size:0.9rem; display:flex; gap:0.5rem; color:var(--muted);"><span style="color:var(--accent)">5.</span> Qualquer carregador USB-C com 100W PD pode ser usado como alternativa ao oficial</li>
+      </ul>
+    </div>
+
+    <div class="req-card" style="margin-top:1rem;">
+      <h4>🔄 Alternativa: Framework Laptop 16 se o OLED não for prioridade</h4>
+      <p style="font-size:0.9rem;">Se a máxima modularidade for mais importante que o ecrã OLED, o Framework 16 é a melhor escolha — tudo é substituível incluindo a GPU, tem 240W via USB-C e 2 slots M.2. A comunidade Framework é muito activa e há guias para tudo.</p>
+    </div>
+
+    <div class="alert alert-warn" style="margin-top:1rem;">
+      <span class="alert-icon">⚠️</span>
+      <div>
+        <p><strong>Sobre a CPU em socket:</strong> Em 2025/2026, não existe um portátil prático (preço e peso razoáveis) com CPU em socket substituível. A Eurocom tem essa solução mas a €3,000+ e 4+ kg. Para o uso académico e profissional do Thierry, a modularidade da mainboard do Framework ou a alta reparabilidade do ThinkPad são a melhor solução real disponível.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== GLOSSÁRIO ===================== -->
+  <section id="glossario">
+    <h2><span class="icon">📖</span> Glossário de Termos</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Termo</th><th>Significado</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>BGA</strong></td><td>Ball Grid Array — tecnologia de soldadura que fixa o CPU diretamente na motherboard, sem socket físico.</td></tr>
+          <tr><td><strong>Socket / Socketed CPU</strong></td><td>Processador com conector físico removível — permite substituição sem soldar. Raro em portáteis modernos.</td></tr>
+          <tr><td><strong>SO-DIMM</strong></td><td>Formato de RAM para portáteis. Se for num slot (não soldado) pode ser substituído/aumentado.</td></tr>
+          <tr><td><strong>M.2 NVMe</strong></td><td>Slot de armazenamento rápido (tipo SSD). M.2 2280 é o mais comum; M.2 2230 é mais pequeno (usado em WiFi cards).</td></tr>
+          <tr><td><strong>USB-C PD</strong></td><td>Power Delivery — padrão de carregamento rápido via USB-C. Permite usar qualquer carregador compatível.</td></tr>
+          <tr><td><strong>Thunderbolt 4</strong></td><td>Versão de alta velocidade do USB-C (Intel). 40 Gbps, suporta PD, DisplayPort e eGPU.</td></tr>
+          <tr><td><strong>WiFi 6E</strong></td><td>Padrão WiFi moderno com suporte a 2.4 GHz, 5 GHz e 6 GHz. Placa tipo M.2 2230.</td></tr>
+          <tr><td><strong>2.4 GHz vs 5 GHz</strong></td><td>Bandas de frequência WiFi. 5 GHz é mais rápida mas com menor alcance; 2.4 GHz é mais lenta mas atravessa paredes.</td></tr>
+          <tr><td><strong>OLED</strong></td><td>Tecnologia de ecrã com contraste infinito, pretos perfeitos e cores vívidas. Superior ao LCD/IPS para uso geral.</td></tr>
+          <tr><td><strong>iFixit Score</strong></td><td>Pontuação de 0 a 10 atribuída pela iFixit à facilidade de reparação de um dispositivo. 10 = máxima reparabilidade.</td></tr>
+          <tr><td><strong>IBM SPSS</strong></td><td>Software estatístico profissional. Requer mínimo 4 GB RAM, recomendado 8–16 GB para trabalho confortável.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Projeto Thierry Laptop &nbsp;·&nbsp; Análise preparada por Jeremy Trindade &nbsp;·&nbsp; Abril 2026</p>
+  <p style="margin-top:0.4rem;">
+    Fontes:
+    <a href="https://www.ifixit.com/repairability/laptop-repairability-scores" target="_blank">iFixit Repairability</a> &nbsp;·&nbsp;
+    <a href="https://frame.work/" target="_blank">Framework Computer</a> &nbsp;·&nbsp;
+    <a href="https://www.lenovo.com" target="_blank">Lenovo ThinkPad</a> &nbsp;·&nbsp;
+    <a href="https://www.notebookcheck.net" target="_blank">NotebookCheck</a> &nbsp;·&nbsp;
+    <a href="https://www.tomsguide.com" target="_blank">Tom's Guide</a>
+  </p>
+</footer>
+
+</body>
+</html>
