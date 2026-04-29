@@ -679,6 +679,10 @@ function toggleTheme() {
               <div class="spec-label">Portas / Entradas</div>
               <div class="spec-value good">2× Thunderbolt 4 (USB-C, PD, DisplayPort) · 2× USB-A 3.2 Gen 1 (1× Always On) · HDMI 2.1 · RJ-45 Gigabit Ethernet · jack combo 3.5mm · nano-SIM (variantes WWAN). Sem leitor SD.</div>
             </div>
+            <div class="spec-item">
+              <div class="spec-label">Gerações disponíveis</div>
+              <div class="spec-value">T14: Gen 1 (2020) → Gen 7 (Abril 2026, atual). T16: Gen 1 (2022) → Gen 5 (Abril 2026, atual). T16 começou em Gen 1 quando substituiu o T15. <a href="#geracoes" style="color:var(--accent)">Ver histórico completo ↓</a></div>
+            </div>
           </div>
 
           <div class="pros-cons">
@@ -841,6 +845,10 @@ function toggleTheme() {
               <div class="spec-label">Portas / Entradas</div>
               <div class="spec-value good">6× slots Expansion Card hot-swap (configuráveis: USB-C, USB-A 3.2 Gen 2 10 Gbps, HDMI 2.0b, DisplayPort, Ethernet 2.5 GbE, SD, MicroSD, Audio, ou storage 250 GB / 1 TB) + jack combo 3.5mm fixo. Carregamento USB-C PD 240 W via qualquer slot USB-C. Único portátil com I/O totalmente reconfigurável.</div>
             </div>
+            <div class="spec-item">
+              <div class="spec-label">Gerações disponíveis</div>
+              <div class="spec-value">Lançado em 2024 (Ryzen 7040 Phoenix). Mainboard 2025 com Ryzen AI 300 (Zen 5, é a versão coberta nesta análise). Filosofia Framework: novas gerações = nova mainboard que se troca no mesmo chassis, em vez de modelo novo. <a href="#geracoes" style="color:var(--accent)">Ver histórico ↓</a></div>
+            </div>
           </div>
 
           <div class="pros-cons">
@@ -928,6 +936,10 @@ function toggleTheme() {
               <div class="spec-label">Portas / Entradas</div>
               <div class="spec-value warn">2× Thunderbolt 4 (USB-C, 40 Gb/s, PD, DisplayPort 1.4) · 2× USB-A 3.2 Gen 1 (1× HP Sleep &amp; Charge) · HDMI 2.1 · jack combo 3.5mm · nano-SIM (variantes WWAN). <strong>Sem RJ-45</strong> (precisa adaptador USB-C / dock) e sem leitor SD.</div>
             </div>
+            <div class="spec-item">
+              <div class="spec-label">Gerações disponíveis</div>
+              <div class="spec-value">G10 (2023, 13th gen Raptor Lake) → G11 (2024, Core Ultra Series 1 Meteor Lake — versão coberta) → G12 (2025, Core Ultra Series 2 Lunar Lake). HP refresca o EliteBook 860 anualmente. <a href="#geracoes" style="color:var(--accent)">Ver histórico ↓</a></div>
+            </div>
           </div>
 
           <div class="pros-cons">
@@ -1004,6 +1016,10 @@ function toggleTheme() {
               <div class="spec-label">Portas / Entradas</div>
               <div class="spec-value warn">2× Thunderbolt 4 (USB-C, USB4, PD, DisplayPort 1.4a) · 1× USB-C 3.2 Gen 2 (PD, DisplayPort) · leitor SD full-size · jack combo 3.5mm · slot wedge-lock. <strong>Sem USB-A, sem HDMI, sem RJ-45</strong> — Dell inclui dongle USB-C → USB-A + HDMI na caixa, mas qualquer dock externo é praticamente obrigatório no dia-a-dia.</div>
             </div>
+            <div class="spec-item">
+              <div class="spec-label">Gerações disponíveis</div>
+              <div class="spec-value">9500 (2020, 10th gen) → 9510 (2021, 11th gen) → 9520 (2022, 12th gen Alder Lake) → 9530 (2023, 13th gen Raptor Lake) → 9540 (2024, Core Ultra Series 1 — versão coberta). Dell rebrandou a linha consumer XPS para "Dell Premium 14/16" em 2025; o 9540 é o último modelo "XPS 15". <a href="#geracoes" style="color:var(--accent)">Ver histórico ↓</a></div>
+            </div>
           </div>
 
           <div class="pros-cons">
@@ -1079,12 +1095,121 @@ function toggleTheme() {
               <div class="spec-label">Portas / Entradas (Raptor X16)</div>
               <div class="spec-value good">2× Thunderbolt 4 (USB-C, PD) · 2× USB-A 3.2 Gen 2 (10 Gbps; 1× com 900 mA charging) · HDMI 2.0 com HDCP (traseira) · RJ-45 Ethernet 2.5 GbE (traseira) · leitor MicroSD · jack combo 3.5mm · entrada DC barrel (carregador 330 W proprietário, sem PD principal). I/O mais completo da lista — feito para substituir desktop.</div>
             </div>
+            <div class="spec-item">
+              <div class="spec-label">Gerações disponíveis</div>
+              <div class="spec-value">Eurocom não usa numeração "Gen N" — actualiza os modelos quando há novas plataformas Intel/AMD desktop. Raptor X16: socket LGA 1700 (12th-14th gen Intel) e LGA 1851 (Core Ultra Series 2 desktop) em revisões posteriores. Sky Z7 R2: padrão similar com refreshes contínuos. <a href="#geracoes" style="color:var(--accent)">Ver histórico ↓</a></div>
+            </div>
           </div>
           <p style="font-size:0.88rem; margin-top:0.8rem;">Mencionado apenas como referência — resolve tecnicamente o critério da CPU não-soldada, mas não é adequado para uso académico/diário pelo preço, peso e dimensões.</p>
         </div>
       </div>
 
     </div><!-- /laptop-list -->
+  </section>
+
+  <!-- ===================== GERAÇÕES POR MODELO (cockpit /todoai #286) ===================== -->
+  <section id="geracoes">
+    <h2><span class="icon">📜</span> Gerações por modelo — o que mudou ao longo do tempo</h2>
+    <p>Cada um dos 5 modelos recomendados teve gerações anteriores ou refreshes. Esta secção documenta o lineage completo para clarificar (a) o que muda entre gerações dos ThinkPad T14/T16 e (b) confirma que os outros modelos também têm gerações que não estavam descritas inicialmente. <strong>Atual = a versão coberta nesta análise (Abril 2026).</strong></p>
+
+    <h3>Lenovo ThinkPad T14 — Gen 1 a Gen 7</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Geração</th>
+            <th>Ano</th>
+            <th>CPU</th>
+            <th>Mudanças-chave vs anterior</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Gen 1</td><td>2020</td><td>Intel Comet Lake (10th gen) / AMD Ryzen 4000 (Renoir)</td><td>Lançamento da T14 (substituiu T490). RAM: 1× SO-DIMM + 8 GB soldados.</td></tr>
+          <tr><td>Gen 2</td><td>2021</td><td>Tiger Lake (11th gen) / Ryzen 5000 (Cezanne)</td><td>WiFi 6 standard, melhor refresh rate em opção FHD.</td></tr>
+          <tr><td>Gen 3</td><td>2022</td><td>Alder Lake (12th gen) / Ryzen 6000 (Rembrandt)</td><td>P-core/E-core híbrido na Intel; AMD passa a ter LPDDR5.</td></tr>
+          <tr><td>Gen 4</td><td>2023</td><td>Raptor Lake (13th gen) / Ryzen 7040 (Phoenix)</td><td>WiFi 6E standard; opção 2.8K OLED introduzida.</td></tr>
+          <tr><td>Gen 5</td><td>2024</td><td>Core Ultra Series 1 (Meteor Lake) / Ryzen 8040 (Hawk Point)</td><td>NPU (AI) integrada; iFixit subiu para 9-10/10; Intel passou para LPCAMM2 (1× módulo upgradeable em vez de 2× SO-DIMM).</td></tr>
+          <tr><td>Gen 6</td><td>2025</td><td>Core Ultra Series 2 (Lunar Lake) / Ryzen AI 300 (Strix Point)</td><td>Categoria "Copilot+ PC" (≥40 TOPS NPU); melhor autonomia.</td></tr>
+          <tr><td class="check"><strong>Gen 7</strong> ⭐ atual</td><td><strong>Abril 2026</strong></td><td>Core Ultra Series 3 (Panther Lake) / Ryzen AI PRO 400</td><td>iFixit 10/10 confirmado; preços EMEA a partir de €1,399.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Lenovo ThinkPad T16 — Gen 1 a Gen 5</h3>
+    <p style="font-size:0.92rem">O T16 só existe desde 2022 (substituiu o T15), por isso tem 2 gerações a menos que o T14. Cada Gen do T16 corresponde a uma Gen+2 do T14 (ex: T16 Gen 5 = T14 Gen 7 em CPU/plataforma).</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Geração</th>
+            <th>Ano</th>
+            <th>CPU</th>
+            <th>Equivalente T14</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Gen 1</td><td>2022</td><td>Alder Lake (12th gen) / Ryzen 6000</td><td>T14 Gen 3</td></tr>
+          <tr><td>Gen 2</td><td>2023</td><td>Raptor Lake (13th gen) / Ryzen 7040</td><td>T14 Gen 4</td></tr>
+          <tr><td>Gen 3</td><td>2024</td><td>Core Ultra Series 1 / Ryzen 8040</td><td>T14 Gen 5</td></tr>
+          <tr><td>Gen 4</td><td>2025</td><td>Core Ultra Series 2 / Ryzen AI 300</td><td>T14 Gen 6</td></tr>
+          <tr><td class="check"><strong>Gen 5</strong> ⭐ atual</td><td><strong>Abril 2026</strong></td><td>Core Ultra Series 3 / Ryzen AI PRO 400</td><td>T14 Gen 7</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="info-box" style="margin-top:1rem">
+      <p><strong>📐 O que mudou nos T-series ao longo das 7 gerações:</strong></p>
+      <ul>
+        <li><strong>Reparabilidade</strong>: subiu progressivamente de ~7/10 (Gen 1-3) para 10/10 (Gen 5+) com a chegada do LPCAMM2 e melhor acesso a peças.</li>
+        <li><strong>RAM</strong>: Gen 1-4 usavam SO-DIMM (AMD) ou SO-DIMM + soldada (Intel). Gen 5+ Intel passou para LPCAMM2 (módulo único de até 64 GB, upgradeable). AMD manteve sempre 2× SO-DIMM.</li>
+        <li><strong>USB-C PD</strong>: T14 manteve-se em 65 W desde Gen 1. T16 oferece 100 W desde Gen 1.</li>
+        <li><strong>Ecrã OLED 2.8K</strong>: opcional desde Gen 4 (2023) em ambos os modelos.</li>
+        <li><strong>WiFi 6E</strong>: standard desde Gen 4. WiFi 7 começou a aparecer em Gen 6/7 dependendo da configuração.</li>
+        <li><strong>Câmara</strong>: 1080p IR desde Gen 4; 5MP IR + privacy shutter desde Gen 6.</li>
+        <li><strong>NPU (AI)</strong>: integrada desde Gen 5. Categoria "Copilot+ PC" (≥40 TOPS) desde Gen 6.</li>
+        <li><strong>Peso</strong>: estável (~1.4 kg T14 / ~1.9 kg T16) — chassis quase inalterado desde Gen 4.</li>
+      </ul>
+    </div>
+
+    <h3>Framework Laptop 16 — refreshes de mainboard, não "Gen N"</h3>
+    <p>O Framework filosoficamente não tem gerações discretas: o chassis fica, a mainboard troca-se. Histórico das mainboards lançadas:</p>
+    <ul style="margin-bottom:1rem">
+      <li><strong>2024 (lançamento)</strong>: AMD Ryzen 7040 series (Phoenix, Zen 4). Primeiras unidades enviadas em Q1-Q2 2024 após pré-encomendas de 2023.</li>
+      <li><strong>2025 (atual)</strong>: AMD Ryzen AI 300 series (Strix Point, Zen 5). Mainboard standalone €499-€699 — instalas no chassis 2024 sem trocar de portátil.</li>
+      <li><strong>GPU module</strong>: Radeon RX 7700S no lançamento; opções actualizadas com cada refresh do AMD GPU lineup.</li>
+    </ul>
+
+    <h3>HP EliteBook 860 — G10 a G12</h3>
+    <ul style="margin-bottom:1rem">
+      <li><strong>G10 (2023)</strong>: Intel Raptor Lake (13th gen). vPro Essentials/Enterprise; OLED introduzido como opção.</li>
+      <li><strong>G11 (2024, ⭐ atual nesta análise)</strong>: Core Ultra Series 1 (Meteor Lake) com NPU integrada. Mesma plataforma do EliteBook 845 G11 mas em 16".</li>
+      <li><strong>G12 (2025)</strong>: Core Ultra Series 2 (Lunar Lake). Categoria Copilot+ PC. Mesma reparabilidade da G11.</li>
+    </ul>
+    <p style="font-size:0.9rem;color:var(--muted)">HP refresca o EliteBook 860 anualmente com a próxima plataforma Intel; o chassis e a reparabilidade mantêm-se largamente iguais entre G10–G12.</p>
+
+    <h3>Dell XPS 15 — 9500 a 9540 (e fim da linha)</h3>
+    <ul style="margin-bottom:1rem">
+      <li><strong>9500 (2020)</strong>: Intel 10th gen Comet Lake. Primeiro XPS 15 com chassis quad-curved e InfinityEdge moderna.</li>
+      <li><strong>9510 (2021)</strong>: 11th gen Tiger Lake. RTX 3050 Ti opcional.</li>
+      <li><strong>9520 (2022)</strong>: 12th gen Alder Lake. Câmara 720p (mantida — crítica frequente).</li>
+      <li><strong>9530 (2023)</strong>: 13th gen Raptor Lake. Última geração com câmara 720p; RTX 4070 opcional.</li>
+      <li><strong>9540 (2024, ⭐ atual nesta análise)</strong>: Core Ultra Series 1 (Meteor Lake). RAM LPDDR5X soldada (foi sempre soldada na linha 9500-9540).</li>
+      <li><strong>2025+</strong>: Dell rebrandou a linha consumer XPS para "Dell Premium" em Janeiro 2025. Não há "XPS 15 9550" — o sucessor chama-se Dell Premium 16. O 9540 é o último modelo a usar o nome XPS 15.</li>
+    </ul>
+
+    <h3>Eurocom Raptor X16 — refreshes contínuos sem numeração</h3>
+    <p>A Eurocom não usa "Gen 1/2/3"; refresca os modelos quando há nova plataforma desktop Intel ou AMD:</p>
+    <ul style="margin-bottom:1rem">
+      <li><strong>Pre-2023</strong>: socket LGA 1700 com 12th/13th gen Intel (Alder/Raptor Lake desktop). Chipset Z690/Z790.</li>
+      <li><strong>2024 refresh</strong>: 14th gen Raptor Lake Refresh (i9-14900K). Mantém LGA 1700.</li>
+      <li><strong>2025+ revisão</strong>: socket LGA 1851 com Core Ultra Series 2 desktop (Arrow Lake). Chipset Z890.</li>
+      <li><strong>Sky Z7 R2</strong>: variante mais portátil (15"), segue o mesmo padrão de refresh por plataforma.</li>
+    </ul>
+    <p style="font-size:0.9rem;color:var(--muted)">A Eurocom posiciona-se como "desktop replacement" — o ciclo de actualização segue o desktop, não os refreshes mobile da Intel/AMD.</p>
+
+    <div class="info-box" style="background:rgba(34,197,94,.08);border-color:rgba(34,197,94,.3)">
+      <p><strong>✅ Resumo da resposta ao Thierry:</strong> Sim, todos os 5 modelos da lista têm gerações ou refreshes anteriores. Os ThinkPad T14 (Gen 1-7) e T16 (Gen 1-5) têm a numeração mais explícita. EliteBook 860 (G10-G12) e XPS 15 (9500-9540) seguem numeração discreta. Framework 16 e Eurocom usam refreshes contínuos sem "Gen N". A versão coberta nesta análise é sempre a mais recente disponível em Abril 2026 — para escolher Gen anterior (ex: T14 Gen 6 em segunda mão), o trade-off principal é CPU/NPU mais antiga em troca de preço significativamente mais baixo no recondicionado, mantendo praticamente a mesma reparabilidade nos T-series desde Gen 5.</p>
+    </div>
   </section>
 
   <!-- ===================== PREÇOS E ONDE COMPRAR ===================== -->
