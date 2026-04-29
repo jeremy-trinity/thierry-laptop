@@ -714,6 +714,91 @@ function toggleTheme() {
             <p>💡 <strong>Dica:</strong> Ao comprar, escolhe sempre a opção de ecrã <strong>OLED 2.8K</strong> e verifica no documento PSREF oficial do Lenovo se a placa WiFi é <strong>M.2 2230</strong> (substituível) ou soldada. O T16 Gen 5 é preferível ao T14 para quem quer 2 slots de SSD.</p>
           </div>
 
+          <!-- SO-DIMM vs LPCAMM2 explainer (cockpit /todoai #303) -->
+          <div class="info-box" style="margin-top:1rem;background:rgba(34,197,94,.08);border-color:rgba(34,197,94,.3)">
+            <p style="margin-bottom:0.6rem"><strong>📐 SO-DIMM vs LPCAMM2: qual é melhor?</strong></p>
+            <p style="margin-bottom:0.6rem"><strong>TL;DR:</strong> Nem 2× SO-DIMM é objectivamente "melhor" nem 1× LPCAMM2 é "melhor". São trade-offs diferentes, ambos upgradeable. A página chama o LPCAMM2 "user-upgradeable, mas não SO-DIMM" para flagar que é formato diferente (não confundir com soldado), não para sugerir que é pior.</p>
+
+            <div class="table-wrap" style="margin:0.6rem 0">
+              <table style="font-size:.88rem">
+                <thead>
+                  <tr>
+                    <th>Aspecto</th>
+                    <th>2× SO-DIMM<br><span style="font-weight:400;color:var(--muted);font-size:.85em">(variante AMD)</span></th>
+                    <th>1× LPCAMM2<br><span style="font-weight:400;color:var(--muted);font-size:.85em">(variante Intel desde Gen 5)</span></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Padrão JEDEC</strong></td>
+                    <td>SO-DIMM desde 2000 (DDR4-3200 / DDR5-5600)</td>
+                    <td>LPCAMM2 ratificado 2023, comercial 2024</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Velocidade típica</strong></td>
+                    <td>DDR5-5600</td>
+                    <td class="check">LPDDR5X-7500/8533 (35-50% mais rápido)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Bus width</strong></td>
+                    <td>2 módulos × 64-bit = 128-bit dual channel</td>
+                    <td>1 módulo de 128-bit dual channel</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Consumo</strong></td>
+                    <td>DDR5 standard</td>
+                    <td class="check">~30-50% menos (LPDDR vs DDR)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Fixação</strong></td>
+                    <td>Slot mecânico</td>
+                    <td>Aparafusado (compression-attached)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Upgrade path</strong></td>
+                    <td class="check">Trocar 1 módulo, manter o outro</td>
+                    <td class="partial">Substituir o módulo inteiro</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Preço (16 GB)</strong></td>
+                    <td class="check">€40-60</td>
+                    <td>€90-130 (mercado novo, menos vendors)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Preço (32 GB)</strong></td>
+                    <td class="check">€70-100</td>
+                    <td>€150-200</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Vendors (Abr 2026)</strong></td>
+                    <td>Crucial, Kingston, Samsung, Corsair, ADATA, G.Skill, Patriot, etc.</td>
+                    <td>Crucial, Samsung, Micron, ADATA (lista limitada, a crescer)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>RAM máxima 2026</strong></td>
+                    <td>64 GB (2× 32 GB)</td>
+                    <td>64 GB (1× 64 GB único)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Bateria estimada</strong></td>
+                    <td>baseline</td>
+                    <td class="check">+30-90 min em uso típico</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p style="margin-bottom:0.6rem"><strong>Para a tua pergunta específica (2× SO-DIMM > 1× LPCAMM2?):</strong></p>
+            <ul style="margin-bottom:0.6rem">
+              <li><strong>Para upgradeability incremental:</strong> SO-DIMM ganha. Compras um T14 Gen 7 AMD com 1× 16 GB, daqui a 2 anos adicionas 1× 32 GB e ficas com 48 GB sem deitar nada fora. Com LPCAMM2 tens de substituir o módulo de 16 GB pelo de 64 GB e o original perde valor.</li>
+              <li><strong>Para preço total:</strong> SO-DIMM ganha. €40-60 + €70-100 = €110-160 para chegar aos 48 GB. LPCAMM2 64 GB custa €280-330. Se já compras de origem com 32 ou 64 GB, a diferença é menor.</li>
+              <li><strong>Para autonomia:</strong> LPCAMM2 ganha. LPDDR5X consome ~30-50% menos que DDR5 SO-DIMM. Em 8 horas típicas (papers, browser, SPSS), traduz-se em ~30-90 min extra de bateria, o que é real.</li>
+              <li><strong>Para velocidade:</strong> LPCAMM2 ganha. LPDDR5X-7500 vs DDR5-5600 é ~35% mais throughput. Para uso académico (SPSS, Excel) não faz diferença visível, mas para Whisper local e LLMs, sente-se.</li>
+            </ul>
+
+            <p style="margin-bottom:0"><strong>Recomendação prática:</strong> Para o teu uso (SPSS + papers + alguma navegação + Whisper ocasional), <strong>variante AMD com 2× SO-DIMM</strong> é a escolha pragmática (mais barato a longo prazo, upgrade incremental). <strong>Se autonomia for crítica</strong> (saíres do café/biblioteca sem carregador horas a fio), variante Intel com LPCAMM2 vale a diferença. Em Gen 1-4 não havia LPCAMM2, só SO-DIMM tradicional, por isso para refurb anterior a 2024 não tens esta escolha.</p>
+          </div>
+
           <!-- T14 vs T16 differences (cockpit /todoai #273) -->
           <div class="info-box" style="margin-top:1rem;background:rgba(124,58,237,.08);border-color:rgba(124,58,237,.3)">
             <p style="margin-bottom:0.6rem"><strong>📐 T14 Gen 7 vs T16 Gen 5: diferenças concretas</strong></p>
